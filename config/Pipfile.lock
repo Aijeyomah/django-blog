@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "786e51d9015bafc8e4281fe0fd81d9d45c262e685b14a19ef05d74be14f3dba0"
+            "sha256": "2cfa3645e6fafcfea784764d71d1bde73047c6a820d6e5573b5567427365d1bb"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -16,6 +16,14 @@
         ]
     },
     "default": {
+        "dj-database-url": {
+            "hashes": [
+                "sha256:4aeaeb1f573c74835b0686a2b46b85990571159ffc21aa57ecd4d1e1cb334163",
+                "sha256:851785365761ebe4994a921b433062309eb882fedd318e1b0fcecc607ed02da9"
+            ],
+            "index": "pypi",
+            "version": "==0.5.0"
+        },
         "django-crispy-forms": {
             "hashes": [
                 "sha256:3db71ab06d17ec9d0195c086d3ad454da300ac268752ac3a4f63d72f7a490254",
