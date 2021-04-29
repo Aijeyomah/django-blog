@@ -1,17 +1,20 @@
 from django.urls import path
-from .views import BlogListView, BlogDetailView, register_request, login_request, logout_request, password_reset_request, post_detail
+from .views import (
+    BlogListView,
+    BlogDetailView,
+    BlogCreateView,
+    BlogUpdateView,
+    BlogDeleteView,
+    post_detail # new
+)
 from django.contrib.auth import views as auth_views
 
 
 urlpatterns = [
+    path('post/<int:pk>/delete/', BlogDeleteView.as_view(), name='post_delete'),
+    path('post/new/', BlogCreateView.as_view(), name='post_new'),
     path('post/<int:pk>/', BlogDetailView.as_view(), name="post_detail"),
-    path("register/", register_request, name="register"),
-    path("login/", login_request, name="login"),
-    path("logout/", logout_request, name="logout"),
-     path('password_reset/done/', auth_views.PasswordResetDoneView.as_view(template_name='password_reset_done.html'), name='password_reset_done'),
-    path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name="password_reset_confirm.html"), name='password_reset_confirm'),
-    path('reset/done/', auth_views.PasswordResetCompleteView.as_view(template_name='password_reset_complete.html'), name='password_reset_complete'),   
-    path("password_reset/", password_reset_request, name="password_reset_form"),   
+    path('post/<int:pk>/edit/', BlogUpdateView.as_view(), name='post_edit'),
     path('', BlogListView.as_view(), name='home' ),
     path('post/comment/', post_detail, name='post_comment')
    

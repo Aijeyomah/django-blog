@@ -14,3 +14,9 @@ db.sqlite3
 __pycache__/
 *.py[cod]
 *$py.class
+
+*.log
+*.pot
+*.pyc
+local_settings.py
+config/staticfiles/
